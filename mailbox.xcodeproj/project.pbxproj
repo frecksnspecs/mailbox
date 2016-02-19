@@ -14,6 +14,8 @@
 		C85AB5741C76BB2B00EC3DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C85AB5721C76BB2B00EC3DB6 /* LaunchScreen.storyboard */; };
 		C85AB57F1C76BB2B00EC3DB6 /* mailboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85AB57E1C76BB2B00EC3DB6 /* mailboxTests.swift */; };
 		C85AB58A1C76BB2B00EC3DB6 /* mailboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85AB5891C76BB2B00EC3DB6 /* mailboxUITests.swift */; };
+		C85AB5981C76BFFB00EC3DB6 /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85AB5971C76BFFB00EC3DB6 /* MailboxViewController.swift */; };
+		C85AB59A1C76F2CB00EC3DB6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85AB5991C76F2CB00EC3DB6 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C85AB5851C76BB2B00EC3DB6 /* mailboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mailboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85AB5891C76BB2B00EC3DB6 /* mailboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailboxUITests.swift; sourceTree = "<group>"; };
 		C85AB58B1C76BB2B00EC3DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C85AB5971C76BFFB00EC3DB6 /* MailboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
+		C85AB5991C76F2CB00EC3DB6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				C85AB5691C76BB2B00EC3DB6 /* AppDelegate.swift */,
+				C85AB5991C76F2CB00EC3DB6 /* Common.swift */,
 				C85AB56B1C76BB2B00EC3DB6 /* ViewController.swift */,
 				C85AB56D1C76BB2B00EC3DB6 /* Main.storyboard */,
+				C85AB5971C76BFFB00EC3DB6 /* MailboxViewController.swift */,
 				C85AB5701C76BB2B00EC3DB6 /* Assets.xcassets */,
 				C85AB5721C76BB2B00EC3DB6 /* LaunchScreen.storyboard */,
 				C85AB5751C76BB2B00EC3DB6 /* Info.plist */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85AB59A1C76F2CB00EC3DB6 /* Common.swift in Sources */,
 				C85AB56C1C76BB2B00EC3DB6 /* ViewController.swift in Sources */,
 				C85AB56A1C76BB2B00EC3DB6 /* AppDelegate.swift in Sources */,
+				C85AB5981C76BFFB00EC3DB6 /* MailboxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
