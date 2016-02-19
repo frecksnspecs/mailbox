@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "71C16CAF616650F1BA2AF23F365AEE2F23D09FA0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "71C16CAF616650F1BA2AF23F365AEE2F23D09FA0" : 0,
+    "E2CE75E77726C2C398D7E9242B7D5D7B84678085" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D9B6DE89-AE0F-4427-AD27-572AF3F4F128",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "71C16CAF616650F1BA2AF23F365AEE2F23D09FA0" : "mailbox\/",
+    "E2CE75E77726C2C398D7E9242B7D5D7B84678085" : "mailbox\/mailbox\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "mailbox",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "mailbox.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/frecksnspecs\/mailbox.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "71C16CAF616650F1BA2AF23F365AEE2F23D09FA0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/frecksnspecs\/mailbox.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2CE75E77726C2C398D7E9242B7D5D7B84678085"
+    }
+  ]
+}
