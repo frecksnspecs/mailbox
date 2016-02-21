@@ -82,13 +82,20 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" id="7Qs-tU-dDb">
-                                                <rect key="frame" x="0.0" y="26" width="320" height="227"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="compose" id="1lb-g5-3p2">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     </imageView>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" id="i0t-gl-yab">
+                                                        <rect key="frame" x="31" y="40" width="97" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yQD-fB-GtI">
                                                         <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,6 +135,8 @@
                     <size key="freeformSize" width="320" height="1432"/>
                     <connections>
                         <outlet property="archiveIcon" destination="5j2-mi-RdL" id="GW5-Jd-hiS"/>
+                        <outlet property="composePanelView" destination="7Qs-tU-dDb" id="kma-0b-ZXz"/>
+                        <outlet property="composeTextField" destination="i0t-gl-yab" id="IG2-b8-eLd"/>
                         <outlet property="composeView" destination="Ru3-10-C0Q" id="thK-Rf-fDg"/>
                         <outlet property="feedImageView" destination="8aI-P2-2GK" id="fNY-J4-R7i"/>
                         <outlet property="laterIcon" destination="4Vy-41-l3t" id="0qu-Br-roh"/>

@@ -20,6 +20,8 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var menuView: UIImageView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var composeView: UIView!
+    @IBOutlet weak var composePanelView: UIView!
+    @IBOutlet weak var composeTextField: UITextField!
     
     var messageOriginalCenter: CGPoint!
     var laterOriginalCenter: CGPoint!
@@ -241,6 +243,7 @@ class MailboxViewController: UIViewController {
         })
 
     }
+    
     @IBAction func onOverlayTap(sender: UITapGestureRecognizer) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             sender.view?.alpha = 0
@@ -253,15 +256,19 @@ class MailboxViewController: UIViewController {
     @IBAction func composeTap(sender: UIButton) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.composeView.alpha = 1
+            self.composePanelView.center.y = 140
             
         })
 
     }
     
     @IBAction func composeCancelTap(sender: UIButton) {
+        //hide keyboard if up
+        view.endEditing(true)
+
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.composeView.alpha = 0
-            
+            self.composePanelView.center.y = 600
         })
 
     }
