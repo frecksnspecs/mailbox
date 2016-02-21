@@ -22,6 +22,7 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var composeView: UIView!
     @IBOutlet weak var composePanelView: UIView!
     @IBOutlet weak var composeTextField: UITextField!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var messageOriginalCenter: CGPoint!
     var laterOriginalCenter: CGPoint!
@@ -35,6 +36,7 @@ class MailboxViewController: UIViewController {
     let laterColor = UIColor(hue: 0.133735, saturation: 0.801368, brightness: 0.981115, alpha: 1)
     let deleteColor = UIColor(hue: 0.0303053, saturation: 0.785326, brightness: 0.924227, alpha: 1)
     let listColor = UIColor(hue: 0.0831905, saturation: 0.459229, brightness: 0.847929, alpha: 1)
+    let mailboxColor = UIColor(hue: 0.54165, saturation: 0.627941, brightness: 0.857796, alpha: 1)
 
     
     override func viewDidLoad() {
@@ -290,13 +292,20 @@ class MailboxViewController: UIViewController {
         presentViewController(alertController, animated: true) {
             // optional code for what happens after the alert controller has finished presenting
         }
-
-        
         
         //hide keyboard if up
         view.endEditing(true)
-
-
+    }
+    
+    @IBAction func segmentSelect(sender: UISegmentedControl) {
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            segmentedControl.tintColor = laterColor
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+            segmentedControl.tintColor = archiveColor
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            segmentedControl.tintColor = mailboxColor
+        }
     }
     
 
