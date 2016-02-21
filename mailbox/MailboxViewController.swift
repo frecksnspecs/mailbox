@@ -17,11 +17,14 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var archiveIcon: UIImageView!
     @IBOutlet weak var rescheduleOverlay: UIImageView!
     @IBOutlet weak var listOverlay: UIImageView!
+    @IBOutlet weak var menuView: UIImageView!
+    @IBOutlet weak var mainView: UIView!
     
     var messageOriginalCenter: CGPoint!
     var laterOriginalCenter: CGPoint!
     var archiveOriginalCenter: CGPoint!
     var feedOriginalCenter:CGPoint!
+    var mainOriginalCenter:CGPoint!
 
     //bkg colors
     let backgroundOriginal = UIColor(hue: 0.620876, saturation: 0.0137875, brightness: 0.931014, alpha: 1)
@@ -34,7 +37,12 @@ class MailboxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = feedImageView.image!.size
+        scrollView.contentSize = CGSize(width: 320, height: 1367)
+        
+        var edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
+        edgeGesture.edges = UIRectEdge.Left
+        mainView.addGestureRecognizer(edgeGesture)
+
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +52,45 @@ class MailboxViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func onEdgePan(sender: UIScreenEdgePanGestureRecognizer){
+        // Absolute (x,y) coordinates in parent view
+        var point = sender.locationInView(view)
+        
+        // Relative change in (x,y) coordinates from where gesture began.
+        var translation = sender.translationInView(view)
+        var velocity = sender.velocityInView(view)
+        
+        //print(mainView.center.x)
+
+
+        if sender.state == UIGestureRecognizerState.Began {
+            mainOriginalCenter = mainView.center
+
+        } else if sender.state == UIGestureRecognizerState.Changed {
+            mainView.center = CGPoint(x: mainOriginalCenter.x + translation.x, y: mainOriginalCenter.y)
+
+        } else if sender.state == UIGestureRecognizerState.Ended {
+            if mainView.center.x > 320 {
+                UIView.animateWithDuration(0.2, delay: 0, options: [], animations: { () -> Void in
+                    self.mainView.center.x = 450
+                    }, completion: { (finished) -> Void in
+                })
+
+            } else{
+                UIView.animateWithDuration(0.2, delay: 0, options: [], animations: { () -> Void in
+                    self.mainView.center.x = 160
+                    }, completion: { (finished) -> Void in
+                })
+            }
+        }
+    }
+    
+    @IBAction func onNavTap(sender: UITapGestureRecognizer) {
+        UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
+            self.mainView.center.x = 160
+            }, completion: { (finished) -> Void in
+        })
+    }
     @IBAction func messageDidPan(sender: UIPanGestureRecognizer) {
         // Absolute (x,y) coordinates in parent view
         var point = sender.locationInView(view)
