@@ -19,6 +19,7 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var listOverlay: UIImageView!
     @IBOutlet weak var menuView: UIImageView!
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var composeView: UIView!
     
     var messageOriginalCenter: CGPoint!
     var laterOriginalCenter: CGPoint!
@@ -248,6 +249,23 @@ class MailboxViewController: UIViewController {
         })
 
     }
+    
+    @IBAction func composeTap(sender: UIButton) {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.composeView.alpha = 1
+            
+        })
+
+    }
+    
+    @IBAction func composeCancelTap(sender: UIButton) {
+        UIView.animateWithDuration(0.3, animations: { () -> Void in
+            self.composeView.alpha = 0
+            
+        })
+
+    }
+    
 
     /*
     // MARK: - Navigation

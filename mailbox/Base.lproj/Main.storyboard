@@ -70,6 +70,38 @@
                                             <outletCollection property="gestureRecognizers" destination="XlY-YR-lDr" appends="YES" id="0lK-zQ-qaP"/>
                                         </connections>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kmp-NI-yiS">
+                                        <rect key="frame" x="266" y="18" width="46" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="composeTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vmr-el-Vx0"/>
+                                        </connections>
+                                    </button>
+                                    <view alpha="0.0" contentMode="scaleToFill" id="Ru3-10-C0Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="7Qs-tU-dDb">
+                                                <rect key="frame" x="0.0" y="26" width="320" height="227"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="compose" id="1lb-g5-3p2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="227"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yQD-fB-GtI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="39"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="composeCancelTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hdp-xk-SVL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" image="reschedule" id="jGw-pZ-H5l">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -86,17 +118,6 @@
                                             <outletCollection property="gestureRecognizers" destination="pal-mB-CoE" appends="YES" id="vjo-St-I5D"/>
                                         </connections>
                                     </imageView>
-                                    <view contentMode="scaleToFill" id="Ru3-10-C0Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="compose" id="1lb-g5-3p2">
-                                                <rect key="frame" x="0.0" y="26" width="320" height="227"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -107,6 +128,7 @@
                     <size key="freeformSize" width="320" height="1432"/>
                     <connections>
                         <outlet property="archiveIcon" destination="5j2-mi-RdL" id="GW5-Jd-hiS"/>
+                        <outlet property="composeView" destination="Ru3-10-C0Q" id="thK-Rf-fDg"/>
                         <outlet property="feedImageView" destination="8aI-P2-2GK" id="fNY-J4-R7i"/>
                         <outlet property="laterIcon" destination="4Vy-41-l3t" id="0qu-Br-roh"/>
                         <outlet property="listOverlay" destination="wHz-HU-bF5" id="kV8-wr-gHd"/>
