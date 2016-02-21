@@ -2,7 +2,7 @@
 
 The purpose of this homework is to leverage animations and gestures to implement more sophisticated interactions. We're going to use the techniques from this week to implement the Mailbox interactions.
 
-Time spent: 6 hours
+Time spent: 12 hours
 
 ## Features
 
@@ -34,15 +34,22 @@ Time spent: 6 hours
 * [x] If the menu is being revealed when the user lifts their finger, it should continue revealing.
 * [x] If the menu is being hidden when the user lifts their finger, it should continue hiding.
 * [x] Tapping on compose should animate to reveal the compose view.
-* [ ] Tapping the segmented control in the title should swipe views in from the left or right.
+* [x] Tapping the segmented control in the title should swipe views in from the left or right.
 * [x] Shake to undo.
 
 **Additional**
 
 * [x] Show actionsheet when canceling out of compose view.
+* [x] Segmented controller changes tint with selections. 
 
 ## Walkthrough
 
+![mailbox gif](mailbox demo.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+
+
 ## Notes
 
-Spent too much time with gesture conditionals. Initially had if-statements checking both gesture direction and message location when I really just needed message location. 
+Spent too much time with gesture conditionals. Initially had if-statements checking both gesture direction and message location when I really just needed message location. With the compose view, I couldn't figure out an  way to auto-focus on the text field without making screen it's own view and calling the input as a first responder. '

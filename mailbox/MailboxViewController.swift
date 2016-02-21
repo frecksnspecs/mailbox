@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MailboxViewController: UIViewController {
+class MailboxViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var feedImageView: UIImageView!
     @IBOutlet weak var messageImageView: UIImageView!
@@ -23,13 +23,15 @@ class MailboxViewController: UIViewController {
     @IBOutlet weak var composePanelView: UIView!
     @IBOutlet weak var composeTextField: UITextField!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var feedScrollView: UIScrollView!
     
     var messageOriginalCenter: CGPoint!
     var laterOriginalCenter: CGPoint!
     var archiveOriginalCenter: CGPoint!
     var feedOriginalCenter:CGPoint!
     var mainOriginalCenter:CGPoint!
-
+    var frame: CGRect!
+    
     //bkg colors
     let backgroundOriginal = UIColor(hue: 0.620876, saturation: 0.0137875, brightness: 0.931014, alpha: 1)
     let archiveColor = UIColor(hue: 0.314688, saturation: 0.546394, brightness: 0.850593, alpha: 1)
@@ -47,6 +49,18 @@ class MailboxViewController: UIViewController {
         var edgeGesture = UIScreenEdgePanGestureRecognizer(target: self, action: "onEdgePan:")
         edgeGesture.edges = UIRectEdge.Left
         mainView.addGestureRecognizer(edgeGesture)
+
+        let pageWidth = feedScrollView.bounds.width
+        let pageHeight = feedScrollView.bounds.height
+        feedScrollView.contentSize = CGSizeMake(3*pageWidth, pageHeight)
+        feedScrollView.pagingEnabled = true
+        feedScrollView.showsHorizontalScrollIndicator = false
+        feedScrollView.delegate = self
+
+        frame = feedScrollView.frame
+        frame.origin.x = frame.size.width * 1
+        frame.origin.y = 0;
+        feedScrollView.scrollRectToVisible(frame, animated: true)
 
 
         // Do any additional setup after loading the view.
@@ -232,6 +246,7 @@ class MailboxViewController: UIViewController {
 
         
     }
+    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         // print("shake")
         UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -271,6 +286,7 @@ class MailboxViewController: UIViewController {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.composeView.alpha = 0
                 self.composePanelView.center.y = 600
+                self.view.endEditing(true)
             })
         }
         alertController.addAction(deleteAction)
@@ -279,13 +295,14 @@ class MailboxViewController: UIViewController {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                 self.composeView.alpha = 0
                 self.composePanelView.center.y = 600
+                self.view.endEditing(true)
             })
         }
         alertController.addAction(keepDraft)
 
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            // handle case of user canceling. Doing nothing will dismiss the view.
+            self.view.endEditing(true)
         }
         alertController.addAction(cancelAction)
         
@@ -301,10 +318,24 @@ class MailboxViewController: UIViewController {
         
         if segmentedControl.selectedSegmentIndex == 0 {
             segmentedControl.tintColor = laterColor
+            frame = feedScrollView.frame
+            frame.origin.x = 0
+            frame.origin.y = 0;
+            feedScrollView.scrollRectToVisible(frame, animated: true)
+
         } else if segmentedControl.selectedSegmentIndex == 2 {
             segmentedControl.tintColor = archiveColor
+            frame = feedScrollView.frame
+            frame.origin.x = 640
+            frame.origin.y = 0;
+            feedScrollView.scrollRectToVisible(frame, animated: true)
         } else if segmentedControl.selectedSegmentIndex == 1 {
             segmentedControl.tintColor = mailboxColor
+            frame = feedScrollView.frame
+            frame.origin.x = 320
+            frame.origin.y = 0;
+            feedScrollView.scrollRectToVisible(frame, animated: true)
+
         }
     }
     
