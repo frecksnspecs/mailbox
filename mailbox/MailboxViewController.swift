@@ -263,13 +263,39 @@ class MailboxViewController: UIViewController {
     }
     
     @IBAction func composeCancelTap(sender: UIButton) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete Draft", style: .Destructive) { (action) in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.composeView.alpha = 0
+                self.composePanelView.center.y = 600
+            })
+        }
+        alertController.addAction(deleteAction)
+        
+        let keepDraft = UIAlertAction(title: "Keep Draft", style: .Default) { (action) in
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                self.composeView.alpha = 0
+                self.composePanelView.center.y = 600
+            })
+        }
+        alertController.addAction(keepDraft)
+
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // handle case of user canceling. Doing nothing will dismiss the view.
+        }
+        alertController.addAction(cancelAction)
+        
+        presentViewController(alertController, animated: true) {
+            // optional code for what happens after the alert controller has finished presenting
+        }
+
+        
+        
         //hide keyboard if up
         view.endEditing(true)
 
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.composeView.alpha = 0
-            self.composePanelView.center.y = 600
-        })
 
     }
     
